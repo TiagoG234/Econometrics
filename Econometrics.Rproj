@@ -1,13 +1,114 @@
-Version: 1.0
-
-RestoreWorkspace: Default
-SaveWorkspace: Default
-AlwaysSaveHistory: Default
-
-EnableCodeIndexing: Yes
-UseSpacesForTab: Yes
-NumSpacesForTab: 2
-Encoding: UTF-8
-
-RnwWeave: Sweave
-LaTeX: pdfLaTeX
+library(readr)
+Dataset1 <- read_csv("C:/Users/Fnac/Desktop/Universidade/Cenas random/Coursera/Econometrics/Dataset1.csv")
+View(Dataset1)
+library(readxl)
+Dataset1 <- read_excel("C:/Users/Fnac/Desktop/Universidade/Cenas random/Coursera/Econometrics/Dataset1.xls")
+View(Dataset1)
+hist(Dataset1)
+hist(Dataset1$Sales)
+hist(Dataset1$Sales,breaks=86:98)
+86:98
+hsit(Dataset1$Price)
+hist(Dataset1$Price)
+scatter(Dataset1$Price,Dataset1$Sales)
+plot(Dataset1$Price,Dataset1$Sales)
+lm(Dataset1$Price,Dataset1$Sales)
+Dataset1$Sales[Dataset1$Prices = 54]
+Dataset1$Sales[Dataset1$Prices == 54]
+Dataset1$Sales[Dataset1$Price == 54]
+func <- function(x){
+Dataset1$Sales[Dataset1$Price == x]
+}
+func(54)
+func <- function(x){
+mean(Dataset1$Sales[Dataset1$Price == x])
+}
+func(54)
+max(Dataset1$Price)
+min(Dataset1$Price)
+51:57
+medias <- apply(51:57,func)
+medias <- apply(51:57,FUN=func)
+dim(51:57)
+medias <- apply(c(51:57),FUN=func)
+seq(51:57)
+dim(seq(51:57))
+list(51:57)
+dim(list(51:57))
+medias <- lapply(list(51:57),FUN=func)
+medias <- sapply(list(51:57),FUN=func)
+list(a=51:57)
+medias <- lapply(list(a=51:57),FUN=func)
+func(55)
+func(56)
+func(57)
+func(51)
+func(52)
+func(53)
+medias <- lapply(list(a=51:57),FUN=func)
+medias <- lapply(51:57,FUN=func)
+medias
+plot(51:57,medias)
+library(readxl)
+TrainExer11 <- read_excel("C:/Users/Fnac/Desktop/Universidade/Cenas random/Coursera/Econometrics/TrainExer11.xls")
+View(TrainExer11)
+hist(TainExer11$Expenditures)
+TrainExer11
+hist(TainExer11$Expenditures)
+TrainExer11$Expenditures
+hist(TrainExer11$Expenditures)
+min(TrainExer11$Expenditures)
+max(TrainExer11$Expenditures)
+hist(TrainExer11$Expenditures,breaks=89:109)
+seq(89,109,2)
+hist(TrainExer11$Expenditures,breaks=seq(89,109,2))
+hist(TrainExer11$Expenditures,breaks=seq(89,109,2),title("Histogram of Expenditures"),xlab = "Expenditures")
+hist(TrainExer11$Expenditures,breaks=seq(89,109,2),title = "Expenditures",xlab = "Expenditures")
+hist(TrainExer11$Expenditures,breaks=seq(89,109,2),title("Histogram of Expenditures"),xlab = "Expenditures")
+hist(TrainExer11$Expenditures,breaks=seq(89,109,2),xlab="Expenditures")
+summary(TrainExer11$Age)
+hist(TrainExer11$Age)
+plot(TrainExer11$Age,TrainExer11$Expenditures)
+mean(TrainExer11$Expenditures)
+mean(TrainExer11$Expenditures[TrainExer11$Age >= 40])
+mean_old <- mean(TrainExer11$Expenditures[TrainExer11$Age >= 40])
+mean_young <- mean(TrainExer11$Expenditures[TrainExer11$Age < 40])
+plot(TrainExer11$Age[TrainExer11$Age < 40],TrainExer11$Expenditures[TrainExer11$Age < 40])
+new_func <- function(x){
+TrainExer11$Expenditures[TrainExer11$Age == x]
+}
+new_func(15:40)
+new_medias <- lapply(15:40,FUN=new_func)
+plot(15:40,new_medias)
+new_medias
+plot(15:40 %in% TrainExer11$Age,new_medias)
+15:40 %in% TrainExer11$Age
+15:40[15:40 %in% TrainExer11$Age]
+a <- c("1","2")
+a[[FALSE,TRUE]]
+a[FALSE,TRUE]
+a
+new_medias
+lsit <- 15:40
+15:40 %in% TrainExer11$Age
+logic <- 15:40 %in% TrainExer11$Age
+lsit[!logic]
+new_medias <- lapply(lsit[!logic],FUN=new_func)
+plot(lsit[!logic],new_medias)
+new_medias
+`%notin%` <- Negate(`%in%`)
+logic <- 15:40 %notin% TrainExer11$Age
+plot(lsit[!logic],new_medias)
+new_medias <- lapply(lsit[!logic],FUN=new_func)
+plot(lsit[!logic],new_medias)
+new_medias
+lsit[!logic]
+lsit[!logic][[7]]
+new_func(35)
+new_func <- function(x){
+mean(TrainExer11$Expenditures[TrainExer11$Age==x])
+}
+new_medias <- lapply(lsit[!logic],FUN=new_func)
+plot(lsit[!logic],new_medias)
+lm(lsit[!logic],new_medias)
+savehistory("C:/Users/Fnac/Desktop/Universidade/Cenas random/Coursera/Econometrics/Econometrics/Econometrics.Rproj")
